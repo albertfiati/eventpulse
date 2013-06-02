@@ -28,6 +28,25 @@
 			$this->password=$password;
 		}
 		
+		//fetch account ID
+		public function getID(){
+			$email = $this->email;
+			$password = $this->password;
+			$salt = $this->getSalt();			
+			$hashedPassword = $this->hashPassword($salt,$password);
+			
+			try{
+				$query = "Select * from $this->table where email='$email' and password='$hashedPassword'";
+				$result = mysql_query($query);
+				
+				while($row=mysql_fetch_assoc($result)){
+					return $row['accountID'];
+				}	
+			}catch(Exception $ex){
+				return "F:".$ex;
+			}
+		}
+		
 		//creating salt
 		public function createSalt(){
 			$size = mcrypt_get_iv_size(MCRYPT_CAST_256, MCRYPT_MODE_CFB);

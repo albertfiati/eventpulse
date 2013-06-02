@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title>Login to EventPulse</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+            <!-- link CSS files-->
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">
+            <style type="text/css">
+
+            html {
+                height: 100%;
+            }
+
+            body {
+                height: 100%;
+            }
+
+            .main {
+                max-height: 100%;
+            }
+
+            </style>
+        </head>
+        <body class="text thin full main">
+                <!-- HEADER / NAVBAR -->
+                <header class="bck light padding">
+                    <div class="row">
+                        <div class="column_6">
+                            <a href="index.html"><img src="img/logo.png" class="logo on-left" /></a>
+                        </div>
+                        <nav class="column_6 text right bold">
+                            <a href="#">Events</a>
+                            <a href="#">About</a>
+                            <a href="#">Partners</a>
+                            <a href="login.html" class="button small">Login / Signup</a>
+                        </nav>
+                    </div>
+                </header>
+                
+                
+                <!-- BODY -->
+                <section class="row br7">
+                    <!-- LOGIN -->
+                    <div class="left">
+                        <div class="column_6 offset_3 form">
+                            <div class="br5"></div>
+                            <h1 class="offset_1">LOGIN</h1>
+                            <div class="br3" id="login_error"></div>
+                            <form class="column_6 form" name="login" method="POST">
+                                <fieldset class="column_5 padding-bottom">
+                                    <label class="nudge-top">Email</label>
+                                    <input type="text" id="email" name="email" placeholder="Email" class="padding-left"/>
+                                </fieldset>
+                                <fieldset class="column_5 padding-bottom">
+                                    <label class="nudge-top">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="Password" class="padding-left"/>
+                                </fieldset>
+                                <fieldset class="column_5 padding-bottom">
+                                    <label></label>
+                                    <button type="submit">Login</button>
+                                    <small class="br5 margin-left"><a href="signup.html">Don't have an account? Create one here.</a></small>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </section>
+                
+
+                <footer class="padding bck color">
+                    <div class="row margin-top margin-bottom">
+                        <nav>
+                            <ol>Contact</ol>
+                            <ol>Press</ol>
+                            <ol>Team</ol>
+                        </nav>
+                    </div>
+                </footer>
+                
+            
+            <!-- call js files, etc.-->
+            <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script> -->
+            <script src="js/jquery-1.9.1.min.js"></script>
+            <script src="js/tuktuk.js"></script> 
+            <script src="js/authentication.js"></script>            
+        </body>
+    </html>

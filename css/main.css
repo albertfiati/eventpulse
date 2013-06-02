@@ -1,0 +1,57 @@
+body > header .logo {
+    margin-top: 8px;
+    margin-right: 8px;
+    max-height: 30px; }
+
+body > footer img {
+    height: 18px;
+    position: relative;
+    top: 5px;
+    left: 2px; }
+
+div.img.avatar {
+    height: 46px;
+    width: 46px;
+    float: left;
+    margin: 1%; }
+
+.full {
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+.br1 {
+    margin-bottom: 1em;
+}
+
+.br2 {
+    margin-bottom: 2em;
+}
+
+.br3 {
+    margin-bottom: 3em;
+}
+
+.br4 {
+    margin-bottom: 4em;
+}     
+
+.br5 {
+    margin-bottom: 5em;
+}
+
+.br7 {
+    margin-bottom: 7em;
+}
+
+.nudge-top {
+    margin-top: 0.7em;
+}
+
+.nudge-right {
+    padding-right: 2em;
+}
+
+.text-height {
+    height: 120px;
+}

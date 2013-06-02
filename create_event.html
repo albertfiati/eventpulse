@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title>Create an Event</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+            <!-- link CSS files-->
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">
+        </head>
+        <body class="text thin full">
+            
+            <!-- HEADER / NAVBAR -->
+            <header class="bck light padding">
+                <div class="row">
+                    <div class="column_6">
+                        <a href="index.html"><img src="img/logo.png" class="logo on-left" /></a>
+                    </div>
+                    <nav class="column_6 text right bold">
+                        <a href="#">Events</a>
+                        <a href="#">About</a>
+                        <a href="#">Partners</a>
+                        <a href="login.html" class="button success small">Account Details</a>
+                    </nav>
+                </div>
+            </header>
+            
+            
+            <!-- BODY -->
+            <section class="row">
+                <br><br>
+
+                <div class="column_8 offset_2">
+                    <div class="padding-left offset_1 br1"><h1>CREATE AN EVENT</h1></div>
+                    <form class="column_6 form" name="create_event" method="post" onsubmit="return createEvent(this);" enctype="multipart/form-data">
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Event Title</label>
+                            <input type="text" id="event_title" name="title" placeholder="Event Title" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Venue</label>
+                            <input type="text" id="event_venue" name="venue" placeholder="Venue" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Address</label>
+                            <input type="text" id="venue_address" name="latlng" placeholder="Address of Venue" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Description</label>
+                            <textarea id="event_desc" placeholder="Event Description" name="description" class="padding-left text-height"></textarea>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label>Add a Poster</label>
+                            <input type="file" id="poster" name="poster" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Start Date</label>
+                            <input type="date" id="start_date" name="startdate" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">Start Time</label>
+                            <input type="time" id="start_time" name="starttime" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">End Date</label>
+                            <input type="date" id="end_date" name="enddate" class="padding-left"/>
+                        </fieldset>    
+                        <fieldset class="column_6 padding-bottom">
+                            <label class="nudge-top">End Time</label>
+                            <input type="time" id="end_time" name="endtime" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom br2">
+                            <label>Go Live!</label>
+                            <input type="radio" name="active" id="active_yes" class="margin-left" value="yes" checked/><span>Yes</span>
+                            <input type="radio" name="active" id="active_no" class="margin-left" value="no"/><span>No</span>
+                        </fieldset>
+                        <fieldset class="column_6 padding-bottom">
+                            <button class="br5" type="submit">Create Event!</button>    
+                        </fieldset>                        
+                    </form>
+                    <br><br><br><br><br>
+                </div>
+   
+            </section>
+
+            <footer class="padding bck color">
+                <div class="row margin-top margin-bottom">
+                    <nav>
+                        <ol>Contact</ol>
+                        <ol>Press</ol>
+                        <ol>Team</ol>
+                    </nav>
+                </div>
+            </footer>
+       
+            <!-- call js files, etc.-->
+            <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script> -->
+            <script src="js/jquery-1.9.1.min.js"></script>
+            <script src="js/tuktuk.js"></script>   
+            <script src="js/authentication.js"></script>  
+            <script src="js/jqueryform.js"></script>
+            <script src="js/events.js"></script> 
+            <script>checkSession();</script>          
+        </body>
+    </html>

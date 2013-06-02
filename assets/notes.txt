@@ -1,0 +1,5 @@
+EvetnPulse is the coolest way to keep up with events. Sign up and join {{ no_of_event_mgrs }} people to organise events.
+
+Create event
+List events
+update profile

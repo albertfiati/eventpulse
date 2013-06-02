@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title>Profile</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+            <!-- link CSS files-->
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
+            <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">
+        </head>
+        <body class="text thin full">
+            
+            <!-- HEADER / NAVBAR -->
+            <header class="bck light padding">
+                <div class="row">
+                    <div class="column_6">
+                        <a href="index.html"><img src="img/logo.png" class="logo on-left" /></a>
+                    </div>
+                    <nav class="column_6 text right bold">
+                        <a href="#">Events</a>
+                        <a href="#">About</a>
+                        <a href="#">Partners</a>
+                        <a href="login.html" class="button small">Login / Signup</a>
+                    </nav>
+                </div>
+            </header>
+            
+            
+            <!-- BODY -->
+            <section class="row">
+                <br><br>
+
+                <div class="column_9 offset_2">
+                    <div class="padding-left"><h1>MY ACCOUNT</h1></div>
+                    <br>
+                    <div class="column_3">
+                        <div><img src="http://placehold.it/250x250&text=Profile+Picture"></div>
+                        <input type="file" id="profile_photo" class="nudge-top">
+                        <hr>
+                        <p><strong>Profile Stats</strong></p>
+                        <ul class="margin" data-tuktuk="totals">
+                            <li><strong>407</strong><small>followers</small></li>
+                            <li><strong>38</strong><small>events</small></li>
+                            <li><strong>14</strong><small>lists</small></li>
+                        </ul>
+                        <a href="">More details...</a>
+                    </div>
+                    <form class="form br2 column_5">
+                        <fieldset class="padding-bottom">
+                            <input type="text" id="username" placeholder="Username eg. ghanaboy10" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="text" id="account_name" placeholder="Official Name eg. MTN Ghana" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="email" id="email" placeholder="Email" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="text" id="address" placeholder="Physical Address" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="url" id="website" placeholder="Web address" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="text" id="person" placeholder="Contact Person" class="padding-left"/>
+                        </fieldset>
+                        <fieldset class="padding-bottom">
+                            <input type="tel" id="phone" placeholder="Phone Number" class="padding-left"/>
+                        </fieldset>
+                        <button class="br3">Update</button>
+                    </form>
+                </div>
+
+                <br><br><br><br><br>
+   
+            </section>
+
+            <footer class="padding bck color">
+                <div class="row margin-top margin-bottom">
+                    <nav>
+                        <ol>Contact</ol>
+                        <ol>Press</ol>
+                        <ol>Team</ol>
+                    </nav>
+                </div>
+            </footer>
+       
+            <!-- call js files, etc.-->
+            <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script> -->
+            <script src="js/jquery-1.9.1.min.js"></script>
+            <script src="js/tuktuk.js"></script>  
+            <script src="js/authentication.js"></script> 
+            <script>checkSession();</script>          
+        </body>
+    </html>

@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jqueryform.js"></script>
+		<script>
+			$(document).ready(function(){
+				
+			});
+			
+			function submitForm(form){
+				$(form).ajaxSubmit({
+					url:"text.php",
+					dataType:"html",
+					type:"post",
+					success:function(data,status){
+						$("#output").html('ResponseText: ' + data + ' Status: ' + status);
+					},
+					error:function(data,status){
+						console.log(status);
+					},
+					forceSync:true
+				});
+				
+				return false;
+			}			
+		</script>
+	</head>
+	<body>
+		<form name="try1" method="post" onsubmit="return submitForm(this);" enctype="multipart/form-data">
+			Username: <input type="text" name="username"></br>
+			Password: <input type="password" name="password"/></br>
+			File:<input type="file" name="myFile"></br>
+			Gender: <input type="radio" name"gender" value="male">Male
+					<input type="radio" name"gender" value="female">Female
+			<input type="submit" value="submit">
+		</form>
+		
+		<div id="output"></div>
+	</body>
+</html>

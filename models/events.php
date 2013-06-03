@@ -1,5 +1,5 @@
 <?php
-    class Events{
+    class Event{
     	//class variables
     	private $accountID;
 		private $eventTitle;
@@ -111,21 +111,23 @@
 		//creating event
 		public function createEvent(){
 			$accID = $this->accountID;
-			$title = mysql_escape_string(htmlentities($this->eventTitle,ENT_QUOTES,'UTF-8'));
-			$venue = mysql_escape_string(htmlentities($this->eventVenue,ENT_QUOTES,'UTF-8'));
-			$latlng = mysql_escape_string(htmlentities($this->eventLatLng,ENT_QUOTES,'UTF-8'));
-			$startDate = mysql_escape_string(htmlentities($this->startDate,ENT_QUOTES,'UTF-8'));
-			$startTime = mysql_escape_string(htmlentities($this->startTime,ENT_QUOTES,'UTF-8'));
-			$endDate = mysql_escape_string(htmlentities($this->endDate,ENT_QUOTES,'UTF-8'));
-			$endTime = mysql_escape_string(htmlentities($this->endTime,ENT_QUOTES,'UTF-8'));
-			$poster = mysql_escape_string(htmlentities($this->eventPoster,ENT_QUOTES,'UTF-8'));
-			$desc= mysql_escape_string(htmlentities($this->eventDesc,ENT_QUOTES,'UTF-8'));
+			$title = mysql_escape_string($this->eventTitle);
+			$venue = mysql_escape_string($this->eventVenue);
+			$latlng = mysql_escape_string($this->eventLatLng);
+			$startDate = mysql_escape_string($this->startDate);
+			$startTime = mysql_escape_string($this->startTime);
+			$endDate = mysql_escape_string($this->endDate);
+			$endTime = mysql_escape_string($this->endTime);
+			$poster = mysql_escape_string($this->eventPoster);
+			$desc= mysql_escape_string($this->eventDesc);
 			
 			try{
 				$query = "Insert into $this->table(accountID,title,venue,latlng,startdate,starttime,enddate,endtime,poster,description)
 						  values('$accID','$title','$venue','$latlng','$startDate','$startTime','$endDate','$endTime','$poster','$desc')";
 				$result = mysql_query($query);
+				
 				print $query;
+				
 				if($result==1){
 					return mysql_insert_id();
 				}else{
@@ -139,15 +141,15 @@
 		//updating event
 		public function updateEvent(){
 			$accID = $this->accountID;
-			$title = mysql_escape_string(htmlentities($this->eventTitle,ENT_QUOTES,'UTF-8'));
-			$venue = mysql_escape_string(htmlentities($this->eventVenue,ENT_QUOTES,'UTF-8'));
-			$latlng = mysql_escape_string(htmlentities($this->eventLatLng,ENT_QUOTES,'UTF-8'));
-			$startDate = mysql_escape_string(htmlentities($this->startDate,ENT_QUOTES,'UTF-8'));
-			$startTime = mysql_escape_string(htmlentities($this->startTime,ENT_QUOTES,'UTF-8'));
-			$endDate = mysql_escape_string(htmlentities($this->endDate,ENT_QUOTES,'UTF-8'));
-			$endTime = mysql_escape_string(htmlentities($this->endTime,ENT_QUOTES,'UTF-8'));
-			$poster = mysql_escape_string(htmlentities($this->eventPoster,ENT_QUOTES,'UTF-8'));
-			$desc= mysql_escape_string(htmlentities($this->eventDesc,ENT_QUOTES,'UTF-8'));
+			$title = mysql_escape_string($this->eventTitle);
+			$venue = mysql_escape_string($this->eventVenue);
+			$latlng = mysql_escape_string($this->eventLatLng);
+			$startDate = mysql_escape_string($this->startDate);
+			$startTime = mysql_escape_string($this->startTime);
+			$endDate = mysql_escape_string($this->endDate);
+			$endTime = mysql_escape_string($this->endTime);
+			$poster = mysql_escape_string($this->eventPoster);
+			$desc= mysql_escape_string($this->eventDesc);
 			
 			try{
 				$query = "update $this->table set title='$title',venue='$latlng',latlng='$latlng',startdate='$startDate',
@@ -183,9 +185,9 @@
 		}
 		
 		//fetching events
-		public function listEvents(){
+		public static function listEvents(){
 			try{
-				$query = "select * from $this->table";				
+				$query = "select * from events order by id desc";				
 				$result = mysql_query($query);
 				
 				return $result;

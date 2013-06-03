@@ -36,7 +36,8 @@
 
                 <div class="column_8 offset_2">
                     <div class="padding-left offset_1 br1"><h1>CREATE AN EVENT</h1></div>
-                    <form class="column_6 form" name="create_event" method="post" onsubmit="return createEvent(this);" enctype="multipart/form-data">
+                    <br>
+                    <form class="column_6 form" name="createevent" method="post" enctype="multipart/form-data" onsubmit="return newEvent(this);">
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Event Title</label>
                             <input type="text" id="event_title" name="title" placeholder="Event Title" class="padding-left"/>
@@ -47,7 +48,7 @@
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Address</label>
-                            <input type="text" id="venue_address" name="latlng" placeholder="Address of Venue" class="padding-left"/>
+                            <input type="text" id="venue_address"  name="latlng" placeholder="Address of Venue" class="padding-left"/>
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Description</label>
@@ -59,7 +60,7 @@
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Start Date</label>
-                            <input type="date" id="start_date" name="startdate" class="padding-left"/>
+                            <input type="date" id="start_date"  name="startdate" class="padding-left"/>
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Start Time</label>
@@ -75,16 +76,19 @@
                         </fieldset>
                         <fieldset class="column_6 padding-bottom br2">
                             <label>Go Live!</label>
-                            <input type="radio" name="active" id="active_yes" class="margin-left" value="yes" checked/><span>Yes</span>
-                            <input type="radio" name="active" id="active_no" class="margin-left" value="no"/><span>No</span>
+                            <input type="radio" name="active" id="active_yes" class="margin-left"/><span>Yes</span>
+                            <input type="radio" name="active" id="active_no" class="margin-left"/><span>No</span>
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
+                            <label></label>
                             <button class="br5" type="submit">Create Event!</button>    
                         </fieldset>                        
                     </form>
                     <br><br><br><br><br>
                 </div>
-   
+   			<div id="output">
+   				
+   			</div>
             </section>
 
             <footer class="padding bck color">
@@ -98,12 +102,11 @@
             </footer>
        
             <!-- call js files, etc.-->
-            <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script> -->
             <script src="js/jquery-1.9.1.min.js"></script>
-            <script src="js/tuktuk.js"></script>   
-            <script src="js/authentication.js"></script>  
             <script src="js/jqueryform.js"></script>
+            <script src="js/tuktuk.js"></script>
+            <script src="js/authentication.js"></script>  
             <script src="js/events.js"></script> 
-            <script>checkSession();</script>          
+            <script>checkSession();</script>                          
         </body>
     </html>

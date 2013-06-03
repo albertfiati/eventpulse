@@ -1,28 +1,30 @@
-$('document').ready(function(){
-	eventinit();
+$(document).ready(function(){
+	eventsinit();	
 });
 
-function eventinit(){
-	createEvent();
+function eventsinit(){
+	listAllEvents();
 }
 
-function createEvent(form){
+function newEvent(form){
 	$(form).ajaxSubmit({
 		url:"controllers/createevent.php",
 		dataType:"html",
 		type:"post",
 		success:function(data,status){
-			alert(data + " " + status);
-			concole.log(data);
+			$('#output').html(data);
 		},
-		error:function(data,status){
-			alert(data + " " + status);
-			console.log(data,status);
-		},
-		complete:function(data,status){
-			alert(data + " " + status);
-			console.log(data + " " + status);
+		error:function(data){
+			$('#output').html(data);
 		}
 	});
 	return false;
+}	
+
+function listAllEvents(){
+	$.get("controllers/listallevents.php",function(data){		
+		$('#alleventslist').html(data);	
+	 });
+	 
+	 return false;
 }

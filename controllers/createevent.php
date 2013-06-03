@@ -1,11 +1,13 @@
 <?php
+	session_start();
+	require_once("../config/requires.inc.php");
+
     $title = mysql_escape_string(htmlentities($_POST['title'],ENT_QUOTES,"UTF-8"));
 	$venue = mysql_escape_string(htmlentities($_POST['venue'],ENT_QUOTES,"UTF-8"));
 	
 	if (isset($_FILES['poster'])){
-		$posterFile = $_FILES['poster'];
-		$posterImg = new uploadPicture(uniqid(),$posterFile,"uploadedFiels/posters/");
-		$posterPath = $post->upload();
+		$posterImg = new uploadPicture(uniqid(),"poster","../uploadedFiles/posters/");
+		$posterPath = $posterImg->upload();
 	}else{
 		$posterPath = "nofile";
 	}
@@ -21,6 +23,6 @@
 	$event = new Event($accID,$title,$venue,$latlng,$startdate,$starttime,$enddate,$endtime,$posterPath,$description);
 	
 	//validate form
-	print $event->createEvent();
+	$event->createEvent();
 	
 ?>

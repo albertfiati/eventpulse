@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 function eventsinit(){
 	listAllEvents();
+	listAllEventsById()
 }
 
 function newEvent(form){
@@ -24,6 +25,14 @@ function newEvent(form){
 function listAllEvents(){
 	$.get("controllers/listallevents.php",function(data){		
 		$('#alleventslist').html(data);	
+	 });
+	 
+	 return false;
+}
+
+function listAllEventsById(){
+	$.get("controllers/listalleventsbyaccount.php",function(data){		
+		$('#alleventslistbyid').html(data);	
 	 });
 	 
 	 return false;

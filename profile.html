@@ -1,99 +1,159 @@
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8" />
-            <title>Profile</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+  <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
+  <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
+  <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <style type="text/css">
+        ul[name="tabs"] li{display: inline;}
+  </style>
+
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+});
+  </script>
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bck light padding">
+        <div class="row">
+            <div class="column_6">
+                <a href="index.html"><img src="img/logo.png" class="logo on-left" /></a>
+            </div>
+            <nav class="column_6 text right bold">          
+                <a href="login.html" class="button small"><i class="icon cogs"></i>Settings</a>
+            </nav>
+        </div>
+    </header>
 
 
-            <!-- link CSS files-->
-            <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
-            <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
-            <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
-            <link rel="stylesheet" type="text/css" href="css/main.css">
-        </head>
-        <body class="text thin full">
-            
-            <!-- HEADER / NAVBAR -->
-            <header class="bck light padding">
-                <div class="row">
-                    <div class="column_6">
-                        <a href="index.html"><img src="img/logo.png" class="logo on-left" /></a>
+        <section>
+            <!-- <nav data-tuktuk="menu" class="row text bold margin-top">
+                <a href="#" class="active"><span class="icon user"></span>Shots<small>(100)</small></a>
+                <a href="#"><span class="icon heart"></span>Trending<small>(3)</small></a>
+                <a href="#"><span class="icon group"></span>Following<small>(192)</small></a>
+                <a href="#"><span class="icon star"></span>Debuts<small>(160)</small></a>
+            </nav> -->
+
+            <div id="tabs" class="row margin-top">
+            	 <div class="row">		            
+		            <div class="column_6">
+	                    <ul name="tabs" style="display: inline;">
+	                        <li class="margin-right br7"><a href="#tabs-1"><span class="icon calendar"></span> My Events</a></li>
+	                        <li class="margin-right br7"><a href="#tabs-2"><span class="icon user"></span> My Profile</a></li>
+	                        <li class="margin-right br7"><a href="#tabs-3"><span class="icon comments-alt"></span> My Interactions</a></li>
+	                    </ul>
+	                </div>
+		            
+					<div class="column_2 text right bold">
+		                <a href="create_event.html" class="button small text right">Create Event</a>
+		            </div>
+			     </div>
+			     
+                <div id="tabs-1" class="row margin-top">
+                    <div class="column_9 offset_2">
+                        <div id="alleventslistbyid">
+                        	
+                        </div>
                     </div>
-                    <nav class="column_6 text right bold">
-                        <a href="#">Events</a>
-                        <a href="#">About</a>
-                        <a href="#">Partners</a>
-                        <a href="login.html" class="button small">Login / Signup</a>
-                    </nav>
                 </div>
-            </header>
-            
-            
-            <!-- BODY -->
-            <section class="row">
-                <br><br>
 
-                <div class="column_9 offset_2">
-                    <div class="padding-left"><h1>MY ACCOUNT</h1></div>
-                    <br>
-                    <div class="column_3">
-                        <div><img src="http://placehold.it/250x250&text=Profile+Picture"></div>
-                        <input type="file" id="profile_photo" class="nudge-top">
-                        <hr>
-                        <p><strong>Profile Stats</strong></p>
-                        <ul class="margin" data-tuktuk="totals">
-                            <li><strong>407</strong><small>followers</small></li>
-                            <li><strong>38</strong><small>events</small></li>
-                            <li><strong>14</strong><small>lists</small></li>
-                        </ul>
-                        <a href="">More details...</a>
+                <div id="tabs-2" class="row margin-top">
+                    <div class="column_9 offset_2">
+                        <div class="padding-left"><h1>MY PROFILE</h1></div>
+                        <br>
+                        <div class="column_3">
+                            <div><img src="http://placehold.it/250x250&text=Profile+Picture"></div>
+                            <input type="file" id="profile_photo" class="nudge-top">
+                            <hr>
+                            <p><strong>Profile Stats</strong></p>
+                            <ul class="margin" data-tuktuk="totals">
+                                <li><strong>407</strong><small>followers</small></li>
+                                <li><strong>38</strong><small>events</small></li>
+                                <li><strong>14</strong><small>lists</small></li>
+                            </ul>
+                            <a href="">More details...</a>
+                        </div>
+                        <form class="form br2 column_5">
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="username" placeholder="Username eg. ghanaboy10" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="account_name" placeholder="Official Name eg. MTN Ghana" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="email" id="email" placeholder="Email" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="address" placeholder="Physical Address" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="url" id="website" placeholder="Web address" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="person" placeholder="Contact Person" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="tel" id="phone" placeholder="Phone Number" class="padding-left"/>
+                            </fieldset>
+                            <button class="br3">Update</button>
+                        </form>
                     </div>
-                    <form class="form br2 column_5">
-                        <fieldset class="padding-bottom">
-                            <input type="text" id="username" placeholder="Username eg. ghanaboy10" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="text" id="account_name" placeholder="Official Name eg. MTN Ghana" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="email" id="email" placeholder="Email" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="text" id="address" placeholder="Physical Address" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="url" id="website" placeholder="Web address" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="text" id="person" placeholder="Contact Person" class="padding-left"/>
-                        </fieldset>
-                        <fieldset class="padding-bottom">
-                            <input type="tel" id="phone" placeholder="Phone Number" class="padding-left"/>
-                        </fieldset>
-                        <button class="br3">Update</button>
-                    </form>
                 </div>
 
-                <br><br><br><br><br>
-   
-            </section>
-
-            <footer class="padding bck color">
-                <div class="row margin-top margin-bottom">
-                    <nav>
-                        <ol>Contact</ol>
-                        <ol>Press</ol>
-                        <ol>Team</ol>
-                    </nav>
+                <div id="tabs-3" class="row">
+                    <!-- <div class="column_9 offset_2">
+                        <div class="padding-left"><h1>MY INTERACTIONS</h1></div>
+                        <br>
+                        <div class="column_3">
+                            <div><img src="http://placehold.it/250x250&text=Profile+Picture"></div>
+                            <input type="file" id="profile_photo" class="nudge-top">
+                            <hr>
+                            <p><strong>Profile Stats</strong></p>
+                            <ul class="margin" data-tuktuk="totals">
+                                <li><strong>407</strong><small>followers</small></li>
+                                <li><strong>38</strong><small>events</small></li>
+                                <li><strong>14</strong><small>lists</small></li>
+                            </ul>
+                            <a href="">More details...</a>
+                        </div>
+                        <form class="form br2 column_5">
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="username" placeholder="Username eg. ghanaboy10" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="account_name" placeholder="Official Name eg. MTN Ghana" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="email" id="email" placeholder="Email" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="address" placeholder="Physical Address" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="url" id="website" placeholder="Web address" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="text" id="person" placeholder="Contact Person" class="padding-left"/>
+                            </fieldset>
+                            <fieldset class="padding-bottom">
+                                <input type="tel" id="phone" placeholder="Phone Number" class="padding-left"/>
+                            </fieldset>
+                            <button class="br3">Update</button>
+                        </form>
+                    </div> -->
                 </div>
-            </footer>
-       
-            <!-- call js files, etc.-->
-            <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script> -->
-            <script src="js/jquery-1.9.1.min.js"></script>
-            <script src="js/tuktuk.js"></script>  
-            <script src="js/authentication.js"></script> 
-            <script>checkSession();</script>          
-        </body>
-    </html>
+            </div>
+
+        </section>
+    <script src="js/events.js"></script>
+</body>
+</html>

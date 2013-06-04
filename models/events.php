@@ -195,5 +195,17 @@
 				return "F:".$ex;
 			}
 		}
+		
+		//fetching events by account id
+		public static function listEventsById($accId){
+			try{
+				$query = "select * from events where accountID=$accId order by id desc";				
+				$result = mysql_query($query);
+				
+				return $result;
+			}catch(Exception $ex){
+				return "F:".$ex;
+			}
+		}
    	}
 ?>

@@ -3,9 +3,12 @@
   <meta charset="utf-8" />
   <title>Dashboard</title>
   <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
+  <!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> -->
+  
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    
+  
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="css/tuktuk.css">
   <link rel="stylesheet" type="text/css" href="css/tuktuk.icons.css">
   <link rel="stylesheet" type="text/css" href="css/tuktuk.theme.css">
@@ -21,7 +24,6 @@
   </script>
 </head>
 <body>
-
     <!-- HEADER / NAVBAR -->
     <header class="bck light padding">
         <div class="row">
@@ -46,10 +48,10 @@
             <div id="tabs" class="row margin-top">
             	 <div class="row">		            
 		            <div class="column_6">
-	                    <ul name="tabs" style="display: inline;">
-	                        <li class="margin-right br7"><a href="#tabs-1"><span class="icon calendar"></span> My Events</a></li>
-	                        <li class="margin-right br7"><a href="#tabs-2"><span class="icon user"></span> My Profile</a></li>
-	                        <li class="margin-right br7"><a href="#tabs-3"><span class="icon comments-alt"></span> My Interactions</a></li>
+	                    <ul name="tabs" style="display: inline; font-weight:bold">
+	                        <li class="margin-right br7"><a href="#tabs-1"><span class="icon calendar">&nbsp;</span> My Events</a></li>
+	                        <li class="margin-right br7"><a href="#tabs-2"><span class="icon user">&nbsp;</span> My Profile</a></li>
+	                        <li class="margin-right br7"><a href="#tabs-3"><span class="icon comments-alt">&nbsp;</span> My Interactions</a></li>
 	                    </ul>
 	                </div>
 		            
@@ -154,6 +156,19 @@
             </div>
 
         </section>
+        
+        <footer class="padding bck color">
+            <div class="row margin-top margin-bottom">
+                <nav>
+                    <ol>Contact</ol>
+                    <ol>Press</ol>
+                    <ol>Team</ol>
+                </nav>
+            </div>
+        </footer>
+        
     <script src="js/events.js"></script>
+    <script src="js/authentication.js"></script>
+    <script>checkSession();</script>
 </body>
 </html>

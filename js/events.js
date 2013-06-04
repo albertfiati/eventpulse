@@ -13,7 +13,7 @@ function newEvent(form){
 		dataType:"html",
 		type:"post",
 		success:function(data,status){
-			$('#output').html(data);
+			window.location.replace("profile.html");
 		},
 		error:function(data){
 			$('#output').html(data);

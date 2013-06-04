@@ -198,6 +198,9 @@
 		
 		//fetching events by account id
 		public static function listEventsById($accId){
+			// $now = new DateTime();
+			// $today = $now->format('d M Y');
+			// DATEDIFF(startdate,$today)>=0 and
 			try{
 				$query = "select * from events where accountID=$accId order by id desc";				
 				$result = mysql_query($query);

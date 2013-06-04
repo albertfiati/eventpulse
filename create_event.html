@@ -47,8 +47,8 @@
                             <input type="text" id="event_venue" name="venue" placeholder="Venue" class="padding-left"/>
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
-                            <label class="nudge-top">Address</label>
-                            <input type="text" id="venue_address"  name="latlng" placeholder="Address of Venue" class="padding-left"/>
+                            <!-- <label class="nudge-top">Address</label> -->
+                            <input type="hidden" id="venue_address"  name="latlng" placeholder="Address of Venue" value="10,10" class="padding-left"/>
                         </fieldset>
                         <fieldset class="column_6 padding-bottom">
                             <label class="nudge-top">Description</label>
@@ -86,9 +86,6 @@
                     </form>
                     <br><br><br><br><br>
                 </div>
-   			<div id="output">
-   				
-   			</div>
             </section>
 
             <footer class="padding bck color">
@@ -106,7 +103,11 @@
             <script src="js/jqueryform.js"></script>
             <script src="js/tuktuk.js"></script>
             <script src="js/authentication.js"></script>  
-            <script src="js/events.js"></script> 
+            <script src="js/events.js"></script>            
+            <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAVj3r2mFlmuDFBtlZTbSvnXdV8Z2Xkpdw&sensor=true&callback=init&language=en&libraries=places"></script>
+            <script>
+            	autocomplete = new google.maps.places.Autocomplete(document.getElementById('event_venue'));
+            </script> -->
             <script>checkSession();</script>                          
         </body>
     </html>
